@@ -44,7 +44,7 @@ always@(posedge clk) begin
 
 	else if (write_enable==1'b0) begin
 		dmc_select<=mem_select;
-		add_dmc_temp<=add_ex;
+		add_dmc<=add_ex;
 		
 		if(dmc_select==A) begin
 

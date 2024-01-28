@@ -26,18 +26,12 @@ always@(posedge clk) begin
 		add_dmc<=add_ex;
 	
 		if(dmc_select==A) begin
-
-		mem_A[add_dmc]<=data_dmc;
-		$display(" data is written in A at time %t  %d ",$time,mem_A[add_dmc]);
-		
+			mem_A[add_dmc]<=data_dmc;
+			$display(" data is written in A at time %t  %d ",$time,mem_A[add_dmc]);
 		end
-	
 		else if(dmc_select==B) begin
-		
 			mem_B[add_dmc]<=data_dmc;
-		
 			$display(" data is written in B at %t %d",$time,mem_B[add_dmc]);
-		
 		end
 	end
 
@@ -47,21 +41,13 @@ always@(posedge clk) begin
 		add_dmc<=add_ex;
 		
 		if(dmc_select==A) begin
-
 			data_out<=mem_A[add_dmc];
-
 		end
-	
 		else if(dmc_select==B) begin
-		
 			data_out<=mem_B[add_dmc];
 		end
-	
-	
 	end
-
 end
-
 endmodule
 
 
